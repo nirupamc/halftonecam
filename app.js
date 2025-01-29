@@ -73,11 +73,11 @@ function toggleRecording() {
     chunks = [];
     recorder.start();
     isRecording = true;
-    recordButton.textContent = "⏹ Stop Recording";
+    recordButton.textContent = "Stop Recording";
   } else {
     recorder.stop();
     isRecording = false;
-    recordButton.textContent = "🎥 Start Recording";
+    recordButton.textContent = "Start Recording";
   }
 }
 
