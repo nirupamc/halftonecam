@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'TII';
+    src: url('TII.TTF') format('truetype');
+}
+
 body {
     margin: 0;
     overflow: hidden;
@@ -27,6 +32,8 @@ canvas {
     bottom: 20px;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center; /* Center buttons */
 }
 
 button {
@@ -38,8 +45,37 @@ button {
     cursor: pointer;
     border-radius: 5px;
     transition: 0.3s;
+    font-family: 'TII', sans-serif; /* Apply custom font */
 }
 
 button:hover {
     background-color: #f1c40f;
+}
+
+/* Media query for tablets (portrait and landscape) */
+@media (max-width: 1024px) {
+    #canvasContainer {
+        height: 70vh; /* Adjust height for tablets */
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    #canvasContainer {
+        height: 60vh; /* Adjust height for mobile devices */
+    }
+
+    #controls {
+        bottom: 10px; /* Adjust position for smaller screens */
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }
