@@ -29,6 +29,15 @@ function setup() {
 
 function draw() {
   background(255);
+
+  push(); // Save current canvas state
+
+  // Mirror the canvas for front camera
+  if (currentFacingMode === "user") {
+    translate(width, 0); // Move to the right
+    scale(-1, 1); // Flip horizontally
+  }
+
   if (video.loadedmetadata) {
     video.loadPixels();
 
@@ -49,6 +58,8 @@ function draw() {
       }
     }
   }
+
+  pop(); // Restore canvas state
 }
 
 function windowResized() {
