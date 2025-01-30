@@ -27,6 +27,10 @@ function draw() {
   background(255);
   video.loadPixels();
 
+  // Mirror the video horizontally
+  translate(width, 0);
+  scale(-1, 1);
+
   for (let y = 0; y < video.height; y++) {
     for (let x = 0; x < video.width; x++) {
       let index = (x + y * video.width) * 4;
@@ -73,11 +77,11 @@ function toggleRecording() {
     chunks = [];
     recorder.start();
     isRecording = true;
-    recordButton.textContent = "Stop Recording";
+    recordButton.textContent = "⏹ Stop Recording";
   } else {
     recorder.stop();
     isRecording = false;
-    recordButton.textContent = "Start Recording";
+    recordButton.textContent = "🎥 Start Recording";
   }
 }
 
