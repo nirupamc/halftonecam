@@ -1,5 +1,5 @@
 let video;
-let spacing = 6;
+let spacing = 4;
 let recorder, chunks = [];
 let isRecording = false;
 let canvasElement;
